@@ -149,7 +149,7 @@ int main(void)
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
 	
 	
-	
+	GCU_CAN_debug_step1();
 	//GCU_CAN_debug_step0();
   /* USER CODE END 2 */
 
