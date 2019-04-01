@@ -161,17 +161,12 @@
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>rtU.dataBuffer,0x0A</ItemText>
+          <ItemText>rtY,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>rtY.clutchCommand,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>4</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>rtY,0x0A</ItemText>
+          <ItemText>rtU,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>

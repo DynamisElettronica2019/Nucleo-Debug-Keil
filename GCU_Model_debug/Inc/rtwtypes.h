@@ -5,11 +5,11 @@
  *
  * File: rtwtypes.h
  *
- * Code generated for Simulink model 'GCU_CAN_debug'.
+ * Code generated for Simulink model 'GCU_Model_genCode'.
  *
- * Model version                  : 1.8
+ * Model version                  : 1.44
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Sat Mar 30 12:39:19 2019
+ * C/C++ source code generated on : Mon Apr  1 11:41:47 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
