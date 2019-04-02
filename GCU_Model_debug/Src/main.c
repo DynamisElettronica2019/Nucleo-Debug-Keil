@@ -155,7 +155,7 @@ int main(void)
 	rtU.SelectMode = 1;
 	GCU_Model_genCode_step2();
 	
-	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+	//HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -166,7 +166,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		if(dutyCycle <= 0) 
+		/*if(dutyCycle <= 0) 
 			step = 10;
 		
 		if(dutyCycle >= 100) 
@@ -176,7 +176,7 @@ int main(void)
 		dutyCycle += step;
 		pwmValue = htim4.Init.Period*dutyCycle/100;
 		
-		user_pwm_setvalue(pwmValue);
+		user_pwm_setvalue(pwmValue);*/
 		
 		
 		
@@ -184,7 +184,6 @@ int main(void)
 		if( rtU.SelectMode == 3)
 			GCU_Model_genCode_step2();
 		
-	  user_pwm_setvalue(pwmValue);
 		HAL_Delay(100);
   }
   /* USER CODE END 3 */
