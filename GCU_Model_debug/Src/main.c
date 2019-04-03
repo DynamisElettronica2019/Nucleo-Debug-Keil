@@ -20,6 +20,12 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "can.h"
+#include "dma.h"
+#include "gfxsimulator.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -46,12 +52,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-TIM_HandleTypeDef htim2;
-TIM_HandleTypeDef htim4;
-
-UART_HandleTypeDef huart3;
-DMA_HandleTypeDef hdma_usart3_tx;
-
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 int count = 9, serialCount = 0;
@@ -59,12 +59,6 @@ int count = 9, serialCount = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_DMA_Init(void);
-static void MX_USART3_UART_Init(void);
-static void MX_TIM2_Init(void);
-static void MX_GFXSIMULATOR_Init(void);
-static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 
@@ -77,7 +71,7 @@ uint8_t rxData[DIM], readData = 0;
 int flag = 0, pwmValue = 0, step = 0, dutyCycle = 0;
 char header[] = "hdr", temp[] = {0,0,0};
 
-void user_pwm_setvalue(uint16_t value);
+//void user_pwm_setvalue(uint16_t value);
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
@@ -97,7 +91,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			rtU.UART_debug[i] = rxData[i];
 			flag = 1;
 		//HAL_GPIO_TogglePin(GPIOB, BluePin_Pin);
-		GCU_Model_genCode_step2();
+		if(rtU.SelectMode==1)
+			GCU_Model_genCode_step2();
 	}
 	if(!strncmp(header, temp, 3))
 	{
@@ -147,13 +142,15 @@ int main(void)
   MX_TIM2_Init();
   MX_GFXSIMULATOR_Init();
   MX_TIM4_Init();
+  MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
 	
 	GCU_Model_genCode_initialize();	
-	rtU.SelectMode = 1;
+	rtU.SelectMode = 2;
 	GCU_Model_genCode_step2();
+	CAN1_Start();
 	
 	//HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
   /* USER CODE END 2 */
@@ -244,214 +241,6 @@ void SystemClock_Config(void)
   }
 }
 
-/**
-  * @brief GFXSIMULATOR Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_GFXSIMULATOR_Init(void)
-{
-
-  /* USER CODE BEGIN GFXSIMULATOR_Init 0 */
-
-  /* USER CODE END GFXSIMULATOR_Init 0 */
-
-  /* USER CODE BEGIN GFXSIMULATOR_Init 1 */
-
-  /* USER CODE END GFXSIMULATOR_Init 1 */
-  /* USER CODE BEGIN GFXSIMULATOR_Init 2 */
-
-  /* USER CODE END GFXSIMULATOR_Init 2 */
-
-}
-
-/**
-  * @brief TIM2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM2_Init(void)
-{
-
-  /* USER CODE BEGIN TIM2_Init 0 */
-
-  /* USER CODE END TIM2_Init 0 */
-
-  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM2_Init 1 */
-
-  /* USER CODE END TIM2_Init 1 */
-  htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 1000-1;
-  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 108-1;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM2_Init 2 */
-
-  /* USER CODE END TIM2_Init 2 */
-
-}
-
-/**
-  * @brief TIM4 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM4_Init(void)
-{
-
-  /* USER CODE BEGIN TIM4_Init 0 */
-
-  /* USER CODE END TIM4_Init 0 */
-
-  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
-
-  /* USER CODE BEGIN TIM4_Init 1 */
-
-  /* USER CODE END TIM4_Init 1 */
-  htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 1080-1;
-  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 2000-1;
-  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim4, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM4_Init 2 */
-
-  /* USER CODE END TIM4_Init 2 */
-  HAL_TIM_MspPostInit(&htim4);
-
-}
-
-/**
-  * @brief USART3 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART3_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART3_Init 0 */
-
-  /* USER CODE END USART3_Init 0 */
-
-  /* USER CODE BEGIN USART3_Init 1 */
-
-  /* USER CODE END USART3_Init 1 */
-  huart3.Instance = USART3;
-  huart3.Init.BaudRate = 115200;
-  huart3.Init.WordLength = UART_WORDLENGTH_8B;
-  huart3.Init.StopBits = UART_STOPBITS_1;
-  huart3.Init.Parity = UART_PARITY_NONE;
-  huart3.Init.Mode = UART_MODE_TX_RX;
-  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART3_Init 2 */
-
-  /* USER CODE END USART3_Init 2 */
-
-}
-
-/** 
-  * Enable DMA controller clock
-  */
-static void MX_DMA_Init(void) 
-{
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA1_CLK_ENABLE();
-
-  /* DMA interrupt init */
-  /* DMA1_Stream3_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
-
-}
-
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_GPIO_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-  /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GreenPin_Pin|RedPin_Pin|BluePin_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : UserButton_Pin */
-  GPIO_InitStruct.Pin = UserButton_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(UserButton_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : GreenPin_Pin RedPin_Pin BluePin_Pin */
-  GPIO_InitStruct.Pin = GreenPin_Pin|RedPin_Pin|BluePin_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-}
-
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -491,7 +280,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 
 
-void user_pwm_setvalue(uint16_t value)
+/*void user_pwm_setvalue(uint16_t value)
 {
 	TIM_OC_InitTypeDef sConfigOC;
   
@@ -501,7 +290,7 @@ void user_pwm_setvalue(uint16_t value)
 	sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
 	HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_4);
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);  
-}
+}*/
 /* USER CODE END 4 */
 
 /**

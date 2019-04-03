@@ -23,6 +23,7 @@ gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gp
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
+gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_can.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h
@@ -33,6 +34,12 @@ gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ti
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 gcu_model_debugtest\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+gcu_model_debugtest\main.o: ../Inc/can.h
+gcu_model_debugtest\main.o: ../Inc/dma.h
+gcu_model_debugtest\main.o: ../Inc/gfxsimulator.h
+gcu_model_debugtest\main.o: ../Inc/tim.h
+gcu_model_debugtest\main.o: ../Inc/usart.h
+gcu_model_debugtest\main.o: ../Inc/gpio.h
 gcu_model_debugtest\main.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debugtest\main.o: ../Inc/rtwtypes.h
 gcu_model_debugtest\main.o: ../Inc/zero_crossing_types.h

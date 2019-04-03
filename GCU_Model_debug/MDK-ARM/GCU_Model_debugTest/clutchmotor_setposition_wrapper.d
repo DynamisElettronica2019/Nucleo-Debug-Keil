@@ -23,6 +23,7 @@ gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_
 gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h
 gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h
 gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
+gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_can.h
 gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 gcu_model_debugtest\clutchmotor_setposition_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h
