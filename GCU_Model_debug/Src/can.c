@@ -23,9 +23,7 @@
 /* USER CODE BEGIN 0 */
 #define NUCLEO_F7_ID (uint16_t) 510
 #include "GCU_Model_genCode.h"
-/* USER CODE END 0 */
 
-CAN_HandleTypeDef hcan1;
 static CAN_FilterTypeDef CAN_Filter_Config;
 static CAN_RxHeaderTypeDef CAN_Received_0_Message_Header;
 static CAN_RxHeaderTypeDef CAN_Received_1_Message_Header;
@@ -34,6 +32,9 @@ static uint8_t CAN_Received_1_Message_Data[8];
 
 static uint8_t nucleo_F7_Packet_Data[8];
 static CAN_TxHeaderTypeDef nucleo_F7_Packet_Header;
+/* USER CODE END 0 */
+
+CAN_HandleTypeDef hcan1;
 
 /* CAN1 init function */
 void MX_CAN1_Init(void)
@@ -165,18 +166,24 @@ void CAN1_Start(void)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &CAN_Received_0_Message_Header, CAN_Received_0_Message_Data);
-	//if(CAN_Received_0_Message_Data[3] >= 50) 
-	//{	
-	rtU.CAN[0] = 2;
-	rtU.CAN[1] = 1;
-	rtU.CAN[2] = CAN_Received_0_Message_Data[3];
 	
-	GCU_Model_genCode_step2();
-	HAL_GPIO_TogglePin(GPIOB, GreenPin_Pin);
-		//CAN1_Send_Nucleo_F7_Packet();
-	//}
+	for(int i=0; i<DIM; i++)
+		rtU.CAN[i] = 0;
 	
+	rtU.CAN[0] |= CAN_Received_0_Message_Header.StdId >>8;
+	rtU.CAN[1] |= CAN_Received_0_Message_Header.StdId;
 	
+	for(int i=2; i<DIM; i++)
+		rtU.CAN[i] = CAN_Received_0_Message_Data[i];
+	
+	if(rtU.SelectMode == CAN_READ_MODE)
+	{	
+		//qui va inserito lo step per l'interpretazione del messaggio
+		GCU_Model_genCode_step2();
+	}
+	
+	HAL_GPIO_TogglePin(GPIOB, GreenLed_Pin);	
+	//CAN1_Send_Nucleo_F7_Packet();
 }
 
 extern void CAN1_Send_Nucleo_F7_Packet(void)

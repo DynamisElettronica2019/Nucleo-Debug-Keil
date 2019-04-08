@@ -60,12 +60,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define UserButton_Pin GPIO_PIN_13
 #define UserButton_GPIO_Port GPIOC
-#define GreenPin_Pin GPIO_PIN_0
-#define GreenPin_GPIO_Port GPIOB
-#define RedPin_Pin GPIO_PIN_14
-#define RedPin_GPIO_Port GPIOB
-#define BluePin_Pin GPIO_PIN_7
-#define BluePin_GPIO_Port GPIOB
+#define GreenLed_Pin GPIO_PIN_0
+#define GreenLed_GPIO_Port GPIOB
+#define RedLed_Pin GPIO_PIN_14
+#define RedLed_GPIO_Port GPIOB
+#define BlueLed_Pin GPIO_PIN_7
+#define BlueLed_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -29,10 +29,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+/*Includere il codice generato.
+	La chiamata delle funzioni step va fatta in can.c tim.c e usart.c dove indicato dai commenti*/
 #include "GCU_Model_genCode.h"
 #include "string.h"
-
-#define DIM 10
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,7 +43,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define UART_READ_MODE 1
+#define CAN_READ_MODE 2
+#define DEMO_READ_MODE 3
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,7 +57,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-int count = 9, serialCount = 0;
+extern uint8_t rxData[];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,46 +70,9 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t tempMsg[24];
-uint8_t rxData[DIM], readData = 0;
-int flag = 0, pwmValue = 0, step = 0, dutyCycle = 0;
-char header[] = "hdr", temp[] = {0,0,0};
 
-//void user_pwm_setvalue(uint16_t value);
+//int pwmValue = 0, step = 0, dutyCycle = 0;
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-	__disable_irq();
-	
-	if(!readData)
-	{	
-		temp[0] = temp[1];
-		temp[1] = temp[2];
-		temp[2] = rxData[0];
-	}
-	else
-	{
-		readData = 0;
-		
-		for(int i=0; i<DIM;i++)
-			rtU.UART_debug[i] = rxData[i];
-			flag = 1;
-		//HAL_GPIO_TogglePin(GPIOB, BluePin_Pin);
-		if(rtU.SelectMode==1)
-			GCU_Model_genCode_step2();
-	}
-	if(!strncmp(header, temp, 3))
-	{
-		readData = 1;
-		HAL_UART_Receive_IT(&huart3, rxData, DIM);
-		
-		for(int i = 0; i<3; i++)
-			temp[i] = 0;
-	}
-	else HAL_UART_Receive_IT(&huart3, rxData, 1);
-	
-	//HAL_UART_Transmit(&huart3, rxData, 4, 10);
-	 __enable_irq();
-}	
 /* USER CODE END 0 */
 
 /**
@@ -140,48 +106,33 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   MX_TIM2_Init();
-  MX_GFXSIMULATOR_Init();
   MX_TIM4_Init();
   MX_CAN1_Init();
+  MX_GFXSIMULATOR_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
 	
+	/*Qui bisogna inserire la funzione che inizializza il modello,
+	  lo step per l'interpretazione del messaggio (per entrare nel primo stato della macchina a stati
+		ed essere pronto a ricevere) e va selezionata su rtU.SelectMode la periferica da cui leggere i messaggi*/
 	GCU_Model_genCode_initialize();	
-	rtU.SelectMode = 2;
+	rtU.SelectMode = UART_READ_MODE;
 	GCU_Model_genCode_step2();
 	CAN1_Start();
 	
-	//HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-		/*if(dutyCycle <= 0) 
-			step = 10;
-		
-		if(dutyCycle >= 100) 
-			step = -10;
-		
-		pwmValue += step;
-		dutyCycle += step;
-		pwmValue = htim4.Init.Period*dutyCycle/100;
-		
-		user_pwm_setvalue(pwmValue);*/
-		
-		
-		
-	
-		if( rtU.SelectMode == 3)
+  {	
+		if( rtU.SelectMode == DEMO_READ_MODE)
+		{	
 			GCU_Model_genCode_step2();
+			HAL_Delay(100);
+		}
 		
-		HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }
@@ -242,42 +193,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-	__disable_irq();
-	
-	//HAL_GPIO_WritePin(GPIOB, BluePin_Pin, GPIO_PIN_SET);
-	
-	if(htim->Instance == TIM2)
-	{	
-		GCU_Model_genCode_step1();
-		
-		if(serialCount == 49)
-		{
-			//GCU_Model_genCode_step1();
-			GCU_Model_genCode_step3();
-		  //HAL_UART_Transmit(&huart3, (uint8_t *) &rtY.debugValues, 10,10);
-			serialCount = 0;
-			 
-		}
-		else serialCount++;
-		
-			
-		if(count == 499)
-		{
-			//char msg[1]={'a'};
-			HAL_GPIO_TogglePin(GPIOB, BluePin_Pin);
-			//HAL_UART_Transmit(&huart3, (uint8_t *) msg, /*WIDTH*/1 , 1);
-			//GCU_Model_genCode_step0();
-			count = 0;
-		}
-    else count++;
-    
-		
-	}
-	//HAL_GPIO_WritePin(GPIOB, BluePin_Pin, GPIO_PIN_RESET);
-  __enable_irq();
-}
+
 
 
 /*void user_pwm_setvalue(uint16_t value)

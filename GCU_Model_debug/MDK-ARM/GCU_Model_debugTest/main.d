@@ -38,9 +38,9 @@ gcu_model_debugtest\main.o: ../Inc/can.h
 gcu_model_debugtest\main.o: ../Inc/dma.h
 gcu_model_debugtest\main.o: ../Inc/gfxsimulator.h
 gcu_model_debugtest\main.o: ../Inc/tim.h
-gcu_model_debugtest\main.o: ../Inc/usart.h
-gcu_model_debugtest\main.o: ../Inc/gpio.h
 gcu_model_debugtest\main.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debugtest\main.o: ../Inc/rtwtypes.h
 gcu_model_debugtest\main.o: ../Inc/zero_crossing_types.h
+gcu_model_debugtest\main.o: ../Inc/usart.h
 gcu_model_debugtest\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gcu_model_debugtest\main.o: ../Inc/gpio.h

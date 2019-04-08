@@ -27,13 +27,15 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "GCU_Model_genCode.h"
+#include "string.h"	
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN Private defines */
-
+#define DIM 10
+#define UART_READ_MODE 1
 /* USER CODE END Private defines */
 
 void MX_USART3_UART_Init(void);

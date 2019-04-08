@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;   ../Drivers/STM32F7xx_HAL_Driver/Inc;   ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;   ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;   ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;    ../Drivers/STM32F7xx_HAL_Driver/Inc;    ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;    ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;    ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -391,11 +391,6 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
-              <FileName>sendUART_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\sendUART_wrapper.c</FilePath>
-            </File>
-            <File>
               <FileName>GCU_Model_genCode.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\GCU_Model_genCode.c</FilePath>
@@ -404,111 +399,6 @@
               <FileName>GCU_Model_genCode_data.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\GCU_Model_genCode_data.c</FilePath>
-            </File>
-            <File>
-              <FileName>ClutchMotor_init_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\ClutchMotor_init_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>ClutchMotor_setPosition_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\ClutchMotor_setPosition_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>ClutchMotor_setupPWM_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\ClutchMotor_setupPWM_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_init_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_init_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_setBlip_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_setBlip_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_setCut_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_setCut_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_setRPMLimiter_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_setRPMLimiter_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_unsetBlip_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_unsetBlip_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_unsetCut_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_unsetCut_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>Efi_unsetRPMLimiter_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Efi_unsetRPMLimiter_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>EngineControl_start_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\EngineControl_start_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>EngineControl_stop_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\EngineControl_stop_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>GearMotor_brake_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GearMotor_brake_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>GearMotor_init_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GearMotor_init_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>GearMotor_release_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GearMotor_release_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>GearMotor_turnLeft_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GearMotor_turnLeft_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>GearMotor_turnRight_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GearMotor_turnRight_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>PackCanUART_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\PackCanUART_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>PackUARTMsg_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\PackUARTMsg_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>UnpackCanUART_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\UnpackCanUART_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>UnpackUARTMsg_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\UnpackUARTMsg_wrapper.c</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
@@ -659,6 +549,121 @@
               <FileName>system_stm32f7xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/system_stm32f7xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>S-Function_Wrappers</GroupName>
+          <Files>
+            <File>
+              <FileName>ClutchMotor_init_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\ClutchMotor_init_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>ClutchMotor_setPosition_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\ClutchMotor_setPosition_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>ClutchMotor_setupPWM_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\ClutchMotor_setupPWM_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_init_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_init_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_setBlip_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_setBlip_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_setCut_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_setCut_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_setRPMLimiter_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_setRPMLimiter_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_unsetBlip_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_unsetBlip_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_unsetCut_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_unsetCut_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>Efi_unsetRPMLimiter_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\Efi_unsetRPMLimiter_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>EngineControl_start_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\EngineControl_start_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>EngineControl_stop_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\EngineControl_stop_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>GearMotor_brake_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\GearMotor_brake_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>GearMotor_init_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\GearMotor_init_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>GearMotor_release_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\GearMotor_release_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>GearMotor_turnLeft_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\GearMotor_turnLeft_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>GearMotor_turnRight_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\GearMotor_turnRight_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>PackCanUART_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\PackCanUART_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>PackUARTMsg_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\PackUARTMsg_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>sendUART_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\sendUART_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>UnpackCanUART_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\UnpackCanUART_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>UnpackUARTMsg_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\UnpackUARTMsg_wrapper.c</FilePath>
             </File>
           </Files>
         </Group>
