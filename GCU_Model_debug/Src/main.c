@@ -107,11 +107,17 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM2_Init();
   MX_TIM4_Init();
-  MX_CAN1_Init();
+  //MX_CAN1_Init();
   MX_GFXSIMULATOR_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
+	
+	HAL_GPIO_WritePin(LED_1_GIALLO_GPIO_Port, LED_1_GIALLO_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_2_GIALLO_GPIO_Port, LED_2_GIALLO_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_3_GIALLO_GPIO_Port, LED_3_GIALLO_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_4_GIALLO_GPIO_Port, LED_4_GIALLO_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_5_ROSSO_GPIO_Port, LED_5_ROSSO_Pin, GPIO_PIN_SET);
 	
 	/*Qui bisogna inserire la funzione che inizializza il modello,
 	  lo step per l'interpretazione del messaggio (per entrare nel primo stato della macchina a stati
@@ -121,18 +127,21 @@ int main(void)
 	GCU_Model_genCode_step2();
 	CAN1_Start();
 	
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {	
-		if( rtU.SelectMode == DEMO_READ_MODE)
-		{	
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+		if(rtU.SelectMode == DEMO_READ_MODE)
+		{
 			GCU_Model_genCode_step2();
 			HAL_Delay(100);
 		}
-		
   }
   /* USER CODE END 3 */
 }

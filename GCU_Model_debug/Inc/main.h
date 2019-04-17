@@ -62,6 +62,16 @@ void Error_Handler(void);
 #define UserButton_GPIO_Port GPIOC
 #define GreenLed_Pin GPIO_PIN_0
 #define GreenLed_GPIO_Port GPIOB
+#define LED_5_ROSSO_Pin GPIO_PIN_13
+#define LED_5_ROSSO_GPIO_Port GPIOF
+#define LED_4_GIALLO_Pin GPIO_PIN_14
+#define LED_4_GIALLO_GPIO_Port GPIOE
+#define LED_3_GIALLO_Pin GPIO_PIN_15
+#define LED_3_GIALLO_GPIO_Port GPIOE
+#define LED_2_GIALLO_Pin GPIO_PIN_10
+#define LED_2_GIALLO_GPIO_Port GPIOB
+#define LED_1_GIALLO_Pin GPIO_PIN_11
+#define LED_1_GIALLO_GPIO_Port GPIOB
 #define RedLed_Pin GPIO_PIN_14
 #define RedLed_GPIO_Port GPIOB
 #define BlueLed_Pin GPIO_PIN_7
