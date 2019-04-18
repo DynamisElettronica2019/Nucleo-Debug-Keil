@@ -164,15 +164,16 @@ void CAN1_Start(void)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &CAN_Received_0_Message_Header, CAN_Received_0_Message_Data);
-	if(CAN_Received_0_Message_Data[0] == 5) 
-	{	
+	//if(CAN_Received_0_Message_Data[0] == 5) 
+	//{	
 		HAL_GPIO_TogglePin(GPIOB, GreenPin_Pin);
-		CAN1_Send_Nucleo_F7_Packet();
-	}
+		//CAN1_Send_Nucleo_F7_Packet();
+	//}
 }
 
 extern void CAN1_Send_Nucleo_F7_Packet(void)
 {
+	HAL_GPIO_TogglePin(GreenPin_GPIO_Port,GreenPin_Pin);
 	uint32_t nucleo_F7_Packet_Mailbox;
 	nucleo_F7_Packet_Header.StdId = NUCLEO_F7_ID;
   nucleo_F7_Packet_Header.RTR = CAN_RTR_DATA;

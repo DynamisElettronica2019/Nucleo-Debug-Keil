@@ -61,7 +61,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int timer2_counter1 = 0;
 /* USER CODE END 0 */
 
 /**
@@ -99,6 +99,7 @@ int main(void)
   MX_TIM4_Init();
   MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
+	HAL_TIM_Base_Start_IT(&htim2);
 	CAN1_Start();
 	HAL_Delay(250);
   /* USER CODE END 2 */
@@ -109,6 +110,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
+	
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -170,7 +172,22 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance == htim2.Instance)
+	{
+		timer2_counter1++;
+		//uint32_t emptyMailboxes = HAL_CAN_GetTxMailboxesFreeLevel(&hcan1);
+		
+		if(timer2_counter1 >= 500)
+		{
+			//HAL_GPIO_TogglePin(RedPin_GPIO_Port, RedPin_Pin);
+			CAN1_Send_Nucleo_F7_Packet();
+			timer2_counter1 = 0;
+		}
+			
+	}
+}
 /* USER CODE END 4 */
 
 /**

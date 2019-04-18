@@ -29,9 +29,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
-/*Includere il codice generato.
-	La chiamata delle funzioni step va fatta in can.c tim.c e usart.c dove indicato dai commenti*/
 #include "GCU_Model_genCode.h"
 #include "string.h"
 /* USER CODE END Includes */
@@ -56,23 +53,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-/* Private variables ---------------------------------------------------------*/
-extern uint8_t rxData[];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-/* Private function prototypes -----------------------------------------------*/
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+extern uint8_t rxData[];
 uint8_t tempMsg[24];
-
-//int pwmValue = 0, step = 0, dutyCycle = 0;
-
 /* USER CODE END 0 */
 
 /**
@@ -106,11 +99,11 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   MX_TIM2_Init();
-  MX_TIM4_Init();
-  //MX_CAN1_Init();
   MX_GFXSIMULATOR_Init();
+  MX_TIM4_Init();
+  MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
+	HAL_TIM_Base_Start_IT(&htim2);
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
 	
 	HAL_GPIO_WritePin(LED_1_GIALLO_GPIO_Port, LED_1_GIALLO_Pin, GPIO_PIN_SET);
@@ -119,14 +112,10 @@ int main(void)
 	HAL_GPIO_WritePin(LED_4_GIALLO_GPIO_Port, LED_4_GIALLO_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_5_ROSSO_GPIO_Port, LED_5_ROSSO_Pin, GPIO_PIN_SET);
 	
-	/*Qui bisogna inserire la funzione che inizializza il modello,
-	  lo step per l'interpretazione del messaggio (per entrare nel primo stato della macchina a stati
-		ed essere pronto a ricevere) e va selezionata su rtU.SelectMode la periferica da cui leggere i messaggi*/
 	GCU_Model_genCode_initialize();	
 	rtU.SelectMode = UART_READ_MODE;
 	GCU_Model_genCode_step2();
 	CAN1_Start();
-	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -134,13 +123,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		
     /* USER CODE BEGIN 3 */
 		if(rtU.SelectMode == DEMO_READ_MODE)
 		{
 			GCU_Model_genCode_step2();
 			HAL_Delay(100);
 		}
+		
+		//HAL_GPIO_TogglePin(RedLed_GPIO_Port, RedLed_Pin);
+		//HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
@@ -202,19 +194,6 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-
-
-/*void user_pwm_setvalue(uint16_t value)
-{
-	TIM_OC_InitTypeDef sConfigOC;
-  
-	sConfigOC.OCMode = TIM_OCMODE_PWM1;
-	sConfigOC.Pulse = value;
-	sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-	sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-	HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_4);
-	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);  
-}*/
 /* USER CODE END 4 */
 
 /**
@@ -225,9 +204,7 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-  while(1)
-  {
-  }
+
   /* USER CODE END Error_Handler_Debug */
 }
 
