@@ -131,8 +131,7 @@ int main(void)
 			HAL_Delay(100);
 		}
 		
-		//HAL_GPIO_TogglePin(RedLed_GPIO_Port, RedLed_Pin);
-		//HAL_Delay(500);
+
   }
   /* USER CODE END 3 */
 }
