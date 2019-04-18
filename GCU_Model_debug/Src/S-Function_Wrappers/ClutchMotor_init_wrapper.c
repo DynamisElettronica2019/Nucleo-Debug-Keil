@@ -23,8 +23,9 @@
  *
  */
 /* %%%-SFUNWIZ_wrapper_externs_Changes_BEGIN --- EDIT HERE TO _END */
+//extern void ClutchMotor_setupPWM_Outputs_wrapper();
 #if !defined(MATLAB_MEX_FILE)
-	extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim4;
 #endif
 /* %%%-SFUNWIZ_wrapper_externs_Changes_END --- EDIT HERE TO _BEGIN */
 
@@ -35,8 +36,10 @@
 void ClutchMotor_init_Outputs_wrapper(void)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
+ClutchMotor_setupPWM_Outputs_wrapper();
+
 #if !defined(MATLAB_MEX_FILE)
-	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
 #endif
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
