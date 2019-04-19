@@ -24,6 +24,8 @@ gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7x
 gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h
 gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h
 gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
+gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h
+gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h
 gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 gcu_model_debug\senduart_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h

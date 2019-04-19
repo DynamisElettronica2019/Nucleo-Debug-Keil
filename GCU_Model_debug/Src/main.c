@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
 #include "gfxsimulator.h"
 #include "tim.h"
@@ -65,6 +66,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 extern uint8_t rxData[];
 uint8_t tempMsg[24];
+
+extern uint32_t adc_buffer[];
 /* USER CODE END 0 */
 
 /**
@@ -100,10 +103,11 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM4_Init();
   MX_GFXSIMULATOR_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
-	
+	HAL_ADC_Start_DMA(&hadc1, adc_buffer, ADC_SENSORS_SIZE);
 	
 	
 	HAL_GPIO_WritePin(LED_1_GIALLO_GPIO_Port, LED_1_GIALLO_Pin, GPIO_PIN_SET);

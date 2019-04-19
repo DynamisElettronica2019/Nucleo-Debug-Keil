@@ -60,8 +60,26 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define UserButton_Pin GPIO_PIN_13
 #define UserButton_GPIO_Port GPIOC
+#define GEAR_MOTOR_IS1_Pin GPIO_PIN_0
+#define GEAR_MOTOR_IS1_GPIO_Port GPIOC
+#define GEAR_MOTOR_IS2_Pin GPIO_PIN_1
+#define GEAR_MOTOR_IS2_GPIO_Port GPIOC
+#define CLUTCH_SERVO_SENSE_FIL_Pin GPIO_PIN_4
+#define CLUTCH_SERVO_SENSE_FIL_GPIO_Port GPIOA
+#define H20_FAN_SX_SENSE_FIL_Pin GPIO_PIN_5
+#define H20_FAN_SX_SENSE_FIL_GPIO_Port GPIOA
+#define H20_FAN_DX_SENSE_FIL_Pin GPIO_PIN_6
+#define H20_FAN_DX_SENSE_FIL_GPIO_Port GPIOA
+#define H20_PUMP_SENSE_FIL_Pin GPIO_PIN_7
+#define H20_PUMP_SENSE_FIL_GPIO_Port GPIOA
+#define FUEL_PUMP_SENSE_FIL_Pin GPIO_PIN_4
+#define FUEL_PUMP_SENSE_FIL_GPIO_Port GPIOC
+#define TEMP_SENSE_Pin GPIO_PIN_5
+#define TEMP_SENSE_GPIO_Port GPIOC
 #define GreenLed_Pin GPIO_PIN_0
 #define GreenLed_GPIO_Port GPIOB
+#define CURRENT_SENSE_Pin GPIO_PIN_1
+#define CURRENT_SENSE_GPIO_Port GPIOB
 #define LED_5_ROSSO_Pin GPIO_PIN_13
 #define LED_5_ROSSO_GPIO_Port GPIOF
 #define LED_4_GIALLO_Pin GPIO_PIN_14
