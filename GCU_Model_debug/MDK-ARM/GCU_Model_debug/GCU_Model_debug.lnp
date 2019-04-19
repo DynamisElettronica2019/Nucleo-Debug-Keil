@@ -22,6 +22,7 @@
 "gcu_model_debug\senduart_wrapper.o"
 "gcu_model_debug\unpackcanuart_wrapper.o"
 "gcu_model_debug\unpackuartmsg_wrapper.o"
+"gcu_model_debug\update_adc_data_wrapper.o"
 "gcu_model_debug\gcu_model_gencode.o"
 "gcu_model_debug\gcu_model_gencode_data.o"
 "gcu_model_debug\main.o"

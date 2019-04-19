@@ -240,9 +240,15 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
 	if(hadc->Instance == ADC1)
 	{
-		HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_13);
-		for (int i=0; i< ADC_SENSORS_SIZE; i++)
-			value[i] = adc_buffer[i];
+		//HAL_GPIO_WritePin(GPIOF, GPIO_PIN_13, GPIO_PIN_SET);
+		//HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_13);
+
+		//chiamare qui lo step del modello che copia i dati presenti nel buffer dell'ADC
+		//ATTENZIONE: per modificare il numero di valori letti occorre modificare ADC_DATA_SIZE in adc.h
+		//ADC_DATA_SIZE <= 10 per ora
+		GCU_Model_genCode_step4();
+		
+		//HAL_GPIO_WritePin(GPIOF, GPIO_PIN_13, GPIO_PIN_RESET);
 	}	
 }	
 /* USER CODE END 1 */

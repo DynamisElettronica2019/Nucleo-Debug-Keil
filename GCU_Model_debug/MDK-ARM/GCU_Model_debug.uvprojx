@@ -500,6 +500,11 @@
               <FileType>1</FileType>
               <FilePath>..\Src\S-Function_Wrappers\UnpackUARTMsg_wrapper.c</FilePath>
             </File>
+            <File>
+              <FileName>update_ADC_data_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\update_ADC_data_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

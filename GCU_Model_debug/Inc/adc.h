@@ -27,13 +27,13 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "GCU_Model_genCode.h"
 /* USER CODE END Includes */
 
 extern ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN Private defines */
-#define ADC_SENSORS_SIZE 9
+#define ADC_DATA_SIZE 9
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
