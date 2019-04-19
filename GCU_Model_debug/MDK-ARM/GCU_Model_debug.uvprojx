@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;   ../Drivers/STM32F7xx_HAL_Driver/Inc;   ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;   ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;   ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -506,6 +506,16 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
+              <FileName>GCU_Model_genCode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\GCU_Model_genCode.c</FilePath>
+            </File>
+            <File>
+              <FileName>GCU_Model_genCode_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\GCU_Model_genCode_data.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -514,11 +524,6 @@
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/can.c</FilePath>
             </File>
             <File>
               <FileName>dma.c</FileName>
@@ -550,26 +555,11 @@
               <FileType>1</FileType>
               <FilePath>../Src/stm32f7xx_hal_msp.c</FilePath>
             </File>
-            <File>
-              <FileName>GCU_Model_genCode.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GCU_Model_genCode.c</FilePath>
-            </File>
-            <File>
-              <FileName>GCU_Model_genCode_data.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\GCU_Model_genCode_data.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers/STM32F7xx_HAL_Driver</GroupName>
           <Files>
-            <File>
-              <FileName>stm32f7xx_hal_can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_can.c</FilePath>
-            </File>
             <File>
               <FileName>stm32f7xx_hal_cortex.c</FileName>
               <FileType>1</FileType>

@@ -1,4 +1,4 @@
-gcu_model_debug\can.o: ../Src/can.c
+gcu_model_debug\can.o: ..\Src\can.c
 gcu_model_debug\can.o: ../Inc/can.h
 gcu_model_debug\can.o: ../Inc/main.h
 gcu_model_debug\can.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h

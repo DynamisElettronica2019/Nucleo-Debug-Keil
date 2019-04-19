@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "can.h"
 #include "dma.h"
 #include "gfxsimulator.h"
 #include "tim.h"
@@ -99,12 +98,13 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   MX_TIM2_Init();
-  MX_GFXSIMULATOR_Init();
   MX_TIM4_Init();
-  MX_CAN1_Init();
+  MX_GFXSIMULATOR_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
+	
+	
 	
 	HAL_GPIO_WritePin(LED_1_GIALLO_GPIO_Port, LED_1_GIALLO_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_2_GIALLO_GPIO_Port, LED_2_GIALLO_Pin, GPIO_PIN_SET);
@@ -115,7 +115,7 @@ int main(void)
 	GCU_Model_genCode_initialize();	
 	rtU.SelectMode = UART_READ_MODE;
 	GCU_Model_genCode_step2();
-	CAN1_Start();
+	//CAN1_Start();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,8 +123,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		
+
     /* USER CODE BEGIN 3 */
+		//CAN1_Send_Nucleo_F7_Packet();
+		HAL_Delay(500);
 		if(rtU.SelectMode == DEMO_READ_MODE)
 		{
 			GCU_Model_genCode_step2();
