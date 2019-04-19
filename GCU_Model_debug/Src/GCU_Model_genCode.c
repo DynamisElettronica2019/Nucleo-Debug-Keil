@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'GCU_Model_genCode'.
  *
- * Model version                  : 1.50
+ * Model version                  : 1.52
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Fri Apr 19 11:38:04 2019
+ * C/C++ source code generated on : Fri Apr 19 12:11:13 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -507,7 +507,7 @@ static void TractionValue(uint16_T rtu_Value, uint16_T *rty_tractionValue,
    *  Constant: '<S12>/TRACTION_CODE'
    *  Constant: '<S16>/GCU_FEEDBACK_ID'
    */
-  PackCanUART_Outputs_wrapper(&rtConstP.pooled2, &rtConstP.TRACTION_CODE_Value,
+  PackCanUART_Outputs_wrapper(&rtConstP.pooled3, &rtConstP.TRACTION_CODE_Value,
     &localDW->Divide, (uint16_T*)&GCU_Model_genCode_U16GND, (uint16_T*)
     &GCU_Model_genCode_U16GND, &localDW->PackCanUart_g[0]);
 
@@ -647,7 +647,7 @@ static void sendUpdatesSW(uint16_T rtu_valCode, uint16_T rtu_value,
   /* S-Function (PackCanUART): '<S31>/PackCanUart' incorporates:
    *  Constant: '<S31>/GCU_FEEDBACK_ID'
    */
-  PackCanUART_Outputs_wrapper(&rtConstP.pooled2, &rtu_valCode, &rtu_value,
+  PackCanUART_Outputs_wrapper(&rtConstP.pooled3, &rtu_valCode, &rtu_value,
     (uint16_T*)&GCU_Model_genCode_U16GND, (uint16_T*)&GCU_Model_genCode_U16GND,
     &localDW->PackCanUart[0]);
 }
@@ -2985,15 +2985,17 @@ void GCU_Model_genCode_step2(void)     /* Sample time: [0.001s, 0.0002s] */
 void GCU_Model_genCode_step3(void)     /* Sample time: [0.001s, 0.0004s] */
 {
   uint8_T rtb_RateTransition10;
-  uint32_T rtb_RateTransition9;
   uint16_T rtb_RateTransition16;
   uint8_T rtb_RateTransition12;
   uint8_T rtb_RateTransition13;
+  uint32_T rtb_RateTransition9[10];
   uint16_T rtb_RateTransition11[3];
   uint16_T rtb_RateTransition14[2];
   uint16_T rtb_RateTransition17[2];
   uint8_T rtb_RateTransition15[2];
   uint16_T Cast;
+  int32_T tmp;
+  int32_T i;
 
   /* RateTransition: '<Root>/Rate Transition11' */
   rtDW.RateTransition11_semaphoreTaken = 1;
@@ -3023,9 +3025,6 @@ void GCU_Model_genCode_step3(void)     /* Sample time: [0.001s, 0.0004s] */
   /* RateTransition: '<Root>/Rate Transition10' */
   rtb_RateTransition10 = rtDW.Cast_a;
 
-  /* RateTransition: '<Root>/Rate Transition9' */
-  rtb_RateTransition9 = rtDW.alive;
-
   /* RateTransition: '<Root>/Rate Transition16' */
   rtb_RateTransition16 = rtDW.accFb;
 
@@ -3035,11 +3034,19 @@ void GCU_Model_genCode_step3(void)     /* Sample time: [0.001s, 0.0004s] */
   /* RateTransition: '<Root>/Rate Transition13' */
   rtb_RateTransition13 = rtDW.clutchCurrVal;
 
+  /* RateTransition: '<Root>/Rate Transition9' */
+  tmp = rtDW.RateTransition9_ActiveBufIdx * 10;
+  for (i = 0; i < 10; i++) {
+    rtb_RateTransition9[i] = rtDW.RateTransition9_Buffer[i + tmp];
+  }
+
+  /* End of RateTransition: '<Root>/Rate Transition9' */
+
   /* S-Function (fcncallgen): '<Root>/Function_Call_Generator' incorporates:
    *  SubSystem: '<Root>/Debug_UART '
    */
   /* DataTypeConversion: '<S1>/Cast' */
-  Cast = (uint16_T)rtb_RateTransition9;
+  Cast = (uint16_T)rtb_RateTransition9[0];
 
   /* SignalConversion: '<S1>/TmpSignal ConversionAtPack_Uart_Message1Inport1' incorporates:
    *  DataTypeConversion: '<S1>/Cast1'
@@ -3123,6 +3130,17 @@ void GCU_Model_genCode_step4(void)     /* Sample time: [0.001s, 0.0006s] */
   }
 
   /* End of Outport: '<Root>/adc_data_vector' */
+
+  /* Update for RateTransition: '<Root>/Rate Transition9' */
+  for (i = 0; i < 10; i++) {
+    rtDW.RateTransition9_Buffer[i + (rtDW.RateTransition9_ActiveBufIdx == 0) *
+      10] = rtDW.update_ADC_data[i];
+  }
+
+  rtDW.RateTransition9_ActiveBufIdx = (int8_T)(rtDW.RateTransition9_ActiveBufIdx
+    == 0);
+
+  /* End of Update for RateTransition: '<Root>/Rate Transition9' */
 }
 
 /* Model initialize function */

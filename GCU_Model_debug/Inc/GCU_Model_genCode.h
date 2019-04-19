@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'GCU_Model_genCode'.
  *
- * Model version                  : 1.50
+ * Model version                  : 1.52
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Fri Apr 19 11:38:04 2019
+ * C/C++ source code generated on : Fri Apr 19 12:11:13 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -182,6 +182,7 @@ typedef struct {
   int32_T aac_dtRelease;               /* '<S3>/GCULogic' */
   int32_T ticksCounter;                /* '<S3>/GCULogic' */
   uint32_T update_ADC_data[10];        /* '<S8>/update_ADC_data' */
+  volatile uint32_T RateTransition9_Buffer[20];/* '<Root>/Rate Transition9' */
   uint32_T alive;                      /* '<S3>/GCULogic' */
   uint16_T RateTransition1[3];         /* '<Root>/Rate Transition1' */
   uint16_T RateTransition2[2];         /* '<Root>/Rate Transition2' */
@@ -228,6 +229,7 @@ typedef struct {
   volatile int8_T RateTransition14_semaphoreTaken;/* '<Root>/Rate Transition14' */
   volatile int8_T RateTransition17_semaphoreTaken;/* '<Root>/Rate Transition17' */
   volatile int8_T RateTransition15_semaphoreTaken;/* '<Root>/Rate Transition15' */
+  volatile int8_T RateTransition9_ActiveBufIdx;/* '<Root>/Rate Transition9' */
   uint8_T RateTransition5[2];          /* '<Root>/Rate Transition5' */
   uint8_T MultiportSwitch[10];         /* '<Root>/Multiport Switch' */
   uint8_T PackCanUart[10];             /* '<S5>/PackCanUart' */
@@ -301,7 +303,7 @@ typedef struct {
    *   '<S16>/GCU_FEEDBACK_ID'
    *   '<S31>/GCU_FEEDBACK_ID'
    */
-  uint16_T pooled2;
+  uint16_T pooled3;
 
   /* Computed Parameter: TRACTION_CODE_Value
    * Referenced by: '<S12>/TRACTION_CODE'

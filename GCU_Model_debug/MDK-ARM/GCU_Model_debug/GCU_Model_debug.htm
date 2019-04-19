@@ -3,7 +3,7 @@
 <title>Static Call Graph - [GCU_Model_debug\GCU_Model_debug.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image GCU_Model_debug\GCU_Model_debug.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 19 12:00:27 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 19 12:22:43 2019
 <BR><P>
 <H3>Maximum Stack Usage =        320 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -700,8 +700,8 @@ Global Symbols
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bd]"></a>GCU_Model_genCode_step3</STRONG> (Thumb, 252 bytes, Stack size 48 bytes, gcu_model_gencode.o(i.GCU_Model_genCode_step3))
-<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = GCU_Model_genCode_step3 &rArr; sendUART_Outputs_wrapper &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
+<P><STRONG><a name="[bd]"></a>GCU_Model_genCode_step3</STRONG> (Thumb, 292 bytes, Stack size 120 bytes, gcu_model_gencode.o(i.GCU_Model_genCode_step3))
+<BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = GCU_Model_genCode_step3 &rArr; sendUART_Outputs_wrapper &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendUART_Outputs_wrapper
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PackUARTMsg_Outputs_wrapper
@@ -709,7 +709,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 
-<P><STRONG><a name="[c0]"></a>GCU_Model_genCode_step4</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, gcu_model_gencode.o(i.GCU_Model_genCode_step4))
+<P><STRONG><a name="[c0]"></a>GCU_Model_genCode_step4</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, gcu_model_gencode.o(i.GCU_Model_genCode_step4))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GCU_Model_genCode_step4
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_ADC_data_Outputs_wrapper
@@ -844,9 +844,9 @@ Global Symbols
 <P><STRONG><a name="[d2]"></a>HAL_DMA_Init</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, stm32f7xx_hal_dma.o(i.HAL_DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_DMA_Init &rArr; DMA_CheckFifoParam
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
+<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
@@ -910,8 +910,8 @@ Global Symbols
 <P><STRONG><a name="[dd]"></a>HAL_Init</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f7xx_hal.o(i.HAL_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -920,8 +920,8 @@ Global Symbols
 <P><STRONG><a name="[df]"></a>HAL_InitTick</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, stm32f7xx_hal.o(i.HAL_InitTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_InitTick &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
@@ -1039,8 +1039,8 @@ Global Symbols
 <P><STRONG><a name="[e8]"></a>HAL_TIM_Base_Init</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_Base_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM2_Init
@@ -1572,7 +1572,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GCU_Model_genCode_step1
 </UL>
 
-<P><STRONG><a name="[b3]"></a>GEARSHIFT</STRONG> (Thumb, 652 bytes, Stack size 72 bytes, gcu_model_gencode.o(i.GEARSHIFT))
+<P><STRONG><a name="[b3]"></a>GEARSHIFT</STRONG> (Thumb, 656 bytes, Stack size 72 bytes, gcu_model_gencode.o(i.GEARSHIFT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = GEARSHIFT &rArr; Clutch_setValue &rArr; ClutchMotor_setPosition_Outputs_wrapper &rArr; HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC6_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GearMotor_turnLeft_Outputs_wrapper
@@ -1589,7 +1589,7 @@ Local Symbols
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aacCheckShift
 </UL>
 
-<P><STRONG><a name="[b9]"></a>GEAR_RPM_UPDATE</STRONG> (Thumb, 322 bytes, Stack size 24 bytes, gcu_model_gencode.o(i.GEAR_RPM_UPDATE))
+<P><STRONG><a name="[b9]"></a>GEAR_RPM_UPDATE</STRONG> (Thumb, 324 bytes, Stack size 24 bytes, gcu_model_gencode.o(i.GEAR_RPM_UPDATE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = GEAR_RPM_UPDATE &rArr; TractionValue &rArr; PackCanUART_Outputs_wrapper
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendStartEngCommand
@@ -1860,8 +1860,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[e2]"></a>__NVIC_SetPriority</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.__NVIC_SetPriority))
-<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<BR><BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
 <P><STRONG><a name="[ef]"></a>TIM_ITRx_SetConfig</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f7xx_hal_tim.o(i.TIM_ITRx_SetConfig))
