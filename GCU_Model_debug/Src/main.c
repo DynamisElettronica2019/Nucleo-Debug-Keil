@@ -112,13 +112,13 @@ int main(void)
 	HAL_UART_Receive_IT(&huart3, rxData, 1);
 	HAL_ADC_Start_DMA(&hadc1, rtU.adc_buffer, ADC_DATA_SIZE);
 	
-	
+	/*
 	HAL_GPIO_WritePin(LED_1_GIALLO_GPIO_Port, LED_1_GIALLO_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_2_GIALLO_GPIO_Port, LED_2_GIALLO_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_3_GIALLO_GPIO_Port, LED_3_GIALLO_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_4_GIALLO_GPIO_Port, LED_4_GIALLO_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_5_ROSSO_GPIO_Port, LED_5_ROSSO_Pin, GPIO_PIN_SET);
-	
+	*/
 	/*Qui bisogna inserire la funzione che inizializza il modello,
 	lo step per l'interpretazione del messaggio (per entrare nel primo stato della macchina a stati
 	ed essere pronto a ricevere) e va selezionata su rtU.SelectMode la periferica da cui leggere i messaggi*/
