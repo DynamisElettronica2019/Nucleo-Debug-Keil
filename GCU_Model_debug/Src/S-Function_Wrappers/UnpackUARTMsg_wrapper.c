@@ -16,6 +16,7 @@
 #include <math.h>
 /*#if !defined(MATLAB_MEX_FILE)
 #include "stm32f7xx_hal.h"
+#include "pin_defines.h"
 #endif*/
 
 #define MAX_LENGTH 10
@@ -29,7 +30,7 @@
  */
 /* %%%-SFUNWIZ_wrapper_externs_Changes_BEGIN --- EDIT HERE TO _END */
 /*#if !defined(MATLAB_MEX_FILE)
-extern UART_HandleTypeDef huart3;
+extern UART_HandleTypeDef huartDebug;
 #endif*/
 /* %%%-SFUNWIZ_wrapper_externs_Changes_END --- EDIT HERE TO _BEGIN */
 

@@ -505,6 +505,16 @@
               <FileType>1</FileType>
               <FilePath>..\Src\S-Function_Wrappers\update_ADC_data_wrapper.c</FilePath>
             </File>
+            <File>
+              <FileName>sendCAN_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\sendCAN_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>PackCANMsg_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\PackCANMsg_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -40,7 +40,6 @@ void Efi_setCut_Outputs_wrapper(uint8_T *upCut_pin)
 #if !defined(MATLAB_MEX_FILE)
 HAL_GPIO_WritePin(EFI_UPCUT_GPIO_PORT, EFI_UPCUT_Pin, GPIO_PIN_SET);
 #endif
-
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
 
