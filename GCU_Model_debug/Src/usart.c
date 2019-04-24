@@ -162,12 +162,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	if(!strncmp(header, temp, 3))
 	{
 		readData = 1;
-		HAL_UART_Receive_IT(&huart3, rxData, DIM);
+		HAL_UART_Receive_IT(&huartDebug, rxData, DIM);
 		
 		for(int i = 0; i<3; i++)
 			temp[i] = 0;
 	}
-	else HAL_UART_Receive_IT(&huart3, rxData, 1);
+	else HAL_UART_Receive_IT(&huartDebug, rxData, 1);
 	
 		 __enable_irq();
 }	

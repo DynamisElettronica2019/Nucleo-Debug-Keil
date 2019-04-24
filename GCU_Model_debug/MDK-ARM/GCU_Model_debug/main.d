@@ -44,4 +44,5 @@ gcu_model_debug\main.o: ../Inc/gfxsimulator.h
 gcu_model_debug\main.o: ../Inc/tim.h
 gcu_model_debug\main.o: ../Inc/usart.h
 gcu_model_debug\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gcu_model_debug\main.o: ../Inc/pin_defines.h
 gcu_model_debug\main.o: ../Inc/gpio.h

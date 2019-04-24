@@ -40,3 +40,4 @@ gcu_model_debug\usart.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\usart.o: ../Inc/rtwtypes.h
 gcu_model_debug\usart.o: ../Inc/zero_crossing_types.h
 gcu_model_debug\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gcu_model_debug\usart.o: ../Inc/pin_defines.h

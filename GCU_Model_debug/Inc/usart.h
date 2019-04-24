@@ -29,6 +29,7 @@
 /* USER CODE BEGIN Includes */
 #include "GCU_Model_genCode.h"
 #include "string.h"	
+#include "pin_defines.h"	 
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart3;
