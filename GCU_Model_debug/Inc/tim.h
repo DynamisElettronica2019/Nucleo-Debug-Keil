@@ -28,6 +28,7 @@
 
 /* USER CODE BEGIN Includes */
 #include "GCU_Model_genCode.h"
+#include "pin_defines.h"	 
 /* USER CODE END Includes */
 
 extern TIM_HandleTypeDef htim2;

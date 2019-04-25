@@ -194,7 +194,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	__disable_irq();
 	
-	if(htim->Instance == TIM2)
+	if(htim->Instance == TIM_1KHZ)
 	{	
 		timer2_counter1++;
 		timer2_counter2++;

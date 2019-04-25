@@ -238,7 +238,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 /* USER CODE BEGIN 1 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-	if(hadc->Instance == ADC1)
+	if(hadc->Instance == ADC_SENSORS)
 	{
 		//HAL_GPIO_WritePin(GPIOF, GPIO_PIN_13, GPIO_PIN_SET);
 		//HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_13);
