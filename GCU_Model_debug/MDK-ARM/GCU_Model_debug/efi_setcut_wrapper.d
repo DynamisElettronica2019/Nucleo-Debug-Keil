@@ -1,5 +1,7 @@
 gcu_model_debug\efi_setcut_wrapper.o: ..\Src\S-Function_Wrappers\Efi_setCut_wrapper.c
 gcu_model_debug\efi_setcut_wrapper.o: ../Inc/rtwtypes.h
+gcu_model_debug\efi_setcut_wrapper.o: ../Inc/pin_defines.h
+gcu_model_debug\efi_setcut_wrapper.o: ../Inc/main.h
 gcu_model_debug\efi_setcut_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 gcu_model_debug\efi_setcut_wrapper.o: ../Inc/stm32f7xx_hal_conf.h
 gcu_model_debug\efi_setcut_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
@@ -35,5 +37,3 @@ gcu_model_debug\efi_setcut_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f
 gcu_model_debug\efi_setcut_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 gcu_model_debug\efi_setcut_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 gcu_model_debug\efi_setcut_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-gcu_model_debug\efi_setcut_wrapper.o: ../Inc/pin_defines.h
-gcu_model_debug\efi_setcut_wrapper.o: ../Inc/main.h
