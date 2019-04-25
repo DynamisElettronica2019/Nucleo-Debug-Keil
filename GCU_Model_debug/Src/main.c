@@ -96,7 +96,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+	
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -137,7 +137,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		//CAN1_Send_Nucleo_F7_Packet();
-		HAL_Delay(500);
+		//HAL_Delay(500);
 		if(rtU.SelectMode == DEMO_READ_MODE)
 		{
 			GCU_Model_genCode_step2();

@@ -212,7 +212,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		
 		if(timer2_counter2 >= TOGGLE_LED_PERIOD)
 		{
-			HAL_GPIO_TogglePin(GPIOB, BlueLed_Pin);
+			HAL_GPIO_TogglePin(BlueLed_GPIO_Port, BlueLed_Pin);
 			timer2_counter2 = 0;
 		}
 	}

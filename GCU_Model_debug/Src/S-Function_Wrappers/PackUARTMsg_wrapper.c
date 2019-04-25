@@ -13,7 +13,6 @@
 
 
 /* %%%-SFUNWIZ_wrapper_includes_Changes_BEGIN --- EDIT HERE TO _END */
-#include <math.h>
 /*#if !defined(MATLAB_MEX_FILE)
 #include "stm32f7xx_hal.h"
 #include "pin_defines.h"
