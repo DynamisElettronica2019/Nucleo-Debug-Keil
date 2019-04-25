@@ -515,6 +515,21 @@
               <FileType>1</FileType>
               <FilePath>..\Src\S-Function_Wrappers\PackCANMsg_wrapper.c</FilePath>
             </File>
+            <File>
+              <FileName>InitADC_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\InitADC_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>InitTimer_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\InitTimer_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>InitUART_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\InitUART_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
