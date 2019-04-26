@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'GCU_Model_genCode'.
  *
- * Model version                  : 1.75
+ * Model version                  : 1.85
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Thu Apr 25 16:59:34 2019
+ * C/C++ source code generated on : Fri Apr 26 17:18:24 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -104,10 +104,7 @@ typedef enum {
 
 /* Block signals and states (default storage) for system '<S3>/TractionValue' */
 typedef struct {
-  uint16_T Divide;                     /* '<S18>/Divide' */
   uint16_T UnitDelay_DSTATE;           /* '<S18>/Unit Delay' */
-  uint8_T PackCanUart[10];             /* '<S21>/PackCanUart' */
-  uint8_T PackCanUart_g[10];           /* '<S22>/PackCanUart' */
 } DW_TractionValue;
 
 /* Block signals and states (default storage) for system '<S16>/Efi_setRpmLimiter' */
@@ -165,7 +162,7 @@ typedef struct {
   real_T count;                        /* '<S6>/AccelerationRoutine' */
   real_T aac_clutchValue;              /* '<S4>/GCULogic' */
   real_T aac_clutchStep;               /* '<S4>/GCULogic' */
-  int32_T aac_parameters[11];          /* '<S4>/GCULogic' */
+  int32_T load_accParameters[11];      /* '<S5>/load_accParameters' */
   int32_T sfEvent;                     /* '<S4>/GCULogic' */
   int32_T aac_dtRelease;               /* '<S4>/GCULogic' */
   int32_T ticksCounter;                /* '<S4>/GCULogic' */
@@ -313,7 +310,6 @@ typedef struct {
    *   '<S12>/ADC_data1_ID'
    *   '<S13>/ADC_data1_ID'
    *   '<S14>/ADC_data1_ID'
-   *   '<S18>/Constant'
    */
   uint16_T pooled2;
 
@@ -332,22 +328,10 @@ typedef struct {
    */
   uint16_T pooled3;
 
-  /* Computed Parameter: GCU_TRACTION_CONTROL_EFI_ID_Val
-   * Referenced by: '<S21>/GCU_TRACTION_CONTROL_EFI_ID'
+  /* Computed Parameter: GCU_FEEDBACK_ID_Value
+   * Referenced by: '<S37>/GCU_FEEDBACK_ID'
    */
-  uint16_T GCU_TRACTION_CONTROL_EFI_ID_Val;
-
-  /* Pooled Parameter (Expression: 793)
-   * Referenced by:
-   *   '<S22>/GCU_FEEDBACK_ID'
-   *   '<S37>/GCU_FEEDBACK_ID'
-   */
-  uint16_T pooled4;
-
-  /* Computed Parameter: TRACTION_CODE_Value
-   * Referenced by: '<S18>/TRACTION_CODE'
-   */
-  uint16_T TRACTION_CODE_Value;
+  uint16_T GCU_FEEDBACK_ID_Value;
 } ConstP;
 
 /* External inputs (root inport signals with default storage) */
@@ -399,6 +383,9 @@ extern RT_MODEL *const rtM;
 /*-
  * These blocks were eliminated from the model due to optimizations:
  *
+ * Block '<S18>/Constant' : Unused code path elimination
+ * Block '<S18>/Divide' : Unused code path elimination
+ * Block '<S18>/TRACTION_CODE' : Unused code path elimination
  * Block '<S12>/Cast2' : Eliminate redundant data type conversion
  * Block '<S12>/Cast3' : Eliminate redundant data type conversion
  * Block '<S13>/Cast2' : Eliminate redundant data type conversion
