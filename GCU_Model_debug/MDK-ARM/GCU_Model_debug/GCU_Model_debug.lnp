@@ -29,6 +29,7 @@
 "gcu_model_debug\inittimer_wrapper.o"
 "gcu_model_debug\inituart_wrapper.o"
 "gcu_model_debug\load_accparameters_wrapper.o"
+"gcu_model_debug\load_default_timings_wrapper.o"
 "gcu_model_debug\gcu_model_gencode.o"
 "gcu_model_debug\gcu_model_gencode_data.o"
 "gcu_model_debug\main.o"

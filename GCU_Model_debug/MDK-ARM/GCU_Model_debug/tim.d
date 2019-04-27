@@ -39,4 +39,5 @@ gcu_model_debug\tim.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex
 gcu_model_debug\tim.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\tim.o: ../Inc/rtwtypes.h
 gcu_model_debug\tim.o: ../Inc/zero_crossing_types.h
+gcu_model_debug\tim.o: ../Inc/timings.h
 gcu_model_debug\tim.o: ../Inc/pin_defines.h

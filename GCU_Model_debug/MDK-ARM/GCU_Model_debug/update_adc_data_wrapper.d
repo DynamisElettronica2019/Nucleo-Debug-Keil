@@ -39,4 +39,5 @@ gcu_model_debug\update_adc_data_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/s
 gcu_model_debug\update_adc_data_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Inc/zero_crossing_types.h
+gcu_model_debug\update_adc_data_wrapper.o: ../Inc/timings.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Inc/pin_defines.h

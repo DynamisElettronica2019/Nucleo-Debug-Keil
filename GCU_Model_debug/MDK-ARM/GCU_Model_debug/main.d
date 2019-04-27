@@ -39,6 +39,7 @@ gcu_model_debug\main.o: ../Inc/adc.h
 gcu_model_debug\main.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\main.o: ../Inc/rtwtypes.h
 gcu_model_debug\main.o: ../Inc/zero_crossing_types.h
+gcu_model_debug\main.o: ../Inc/timings.h
 gcu_model_debug\main.o: ../Inc/pin_defines.h
 gcu_model_debug\main.o: ../Inc/dma.h
 gcu_model_debug\main.o: ../Inc/gfxsimulator.h

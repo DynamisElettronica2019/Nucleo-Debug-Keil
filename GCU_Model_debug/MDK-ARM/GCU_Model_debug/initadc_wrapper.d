@@ -40,3 +40,4 @@ gcu_model_debug\initadc_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx
 gcu_model_debug\initadc_wrapper.o: ../Inc/adc.h
 gcu_model_debug\initadc_wrapper.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\initadc_wrapper.o: ../Inc/zero_crossing_types.h
+gcu_model_debug\initadc_wrapper.o: ../Inc/timings.h
