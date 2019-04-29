@@ -540,6 +540,16 @@
               <FileType>1</FileType>
               <FilePath>..\Src\S-Function_Wrappers\load_default_timings_wrapper.c</FilePath>
             </File>
+            <File>
+              <FileName>writeValueEEPROM_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\writeValueEEPROM_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>readValueEEPROM_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\readValueEEPROM_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
