@@ -68,7 +68,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern uint8_t rxData[];
-uint8_t tempMsg[24];
+uint8_t tempMsg[44];
 
 extern uint32_t adc_buffer[];
 /* USER CODE END 0 */

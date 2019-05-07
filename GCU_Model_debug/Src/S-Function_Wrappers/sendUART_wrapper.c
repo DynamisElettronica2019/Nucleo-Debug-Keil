@@ -17,9 +17,9 @@
 //#include "stm32f7xx_hal.h"
 #include "pin_defines.h"
 #endif
-#define WIDTH 20
+#define WIDTH 40
 /* %%%-SFUNWIZ_wrapper_includes_Changes_END --- EDIT HERE TO _BEGIN */
-#define u_width 20
+#define u_width 40
 
 /*
  * Create external references here.  
@@ -50,12 +50,10 @@ void sendUART_Outputs_wrapper(const uint8_T *msg)
   for(int i = 0; i<WIDTH; i++)
 		tempMsg[3+i] = msg[i];
 	
-  tempMsg[WIDTH+3] = '\r';
+  tempMsg[WIDTH+3] = 13;//'\r';
 
   HAL_UART_Transmit_DMA(&huartDebug, tempMsg, WIDTH+4);	
 #endif
-  
-  
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
 
