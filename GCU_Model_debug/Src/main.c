@@ -43,9 +43,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define UART_READ_MODE 1
-#define CAN_READ_MODE 2
-#define DEMO_READ_MODE 3
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -68,7 +66,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern uint8_t rxData[];
-uint8_t tempMsg[44];
+uint8_t tempMsg[UART_SENT_DATA_WIDTH+4];
 
 extern uint32_t adc_buffer[];
 /* USER CODE END 0 */

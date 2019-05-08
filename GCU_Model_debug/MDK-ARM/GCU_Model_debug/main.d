@@ -35,6 +35,7 @@ gcu_model_debug\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 gcu_model_debug\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 gcu_model_debug\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 gcu_model_debug\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+gcu_model_debug\main.o: ../Inc/constant_defines.h
 gcu_model_debug\main.o: ../Inc/adc.h
 gcu_model_debug\main.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\main.o: ../Inc/rtwtypes.h

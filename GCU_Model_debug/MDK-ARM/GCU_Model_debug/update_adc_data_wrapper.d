@@ -37,6 +37,7 @@ gcu_model_debug\update_adc_data_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/s
 gcu_model_debug\update_adc_data_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+gcu_model_debug\update_adc_data_wrapper.o: ../Inc/constant_defines.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\update_adc_data_wrapper.o: ../Inc/zero_crossing_types.h
 gcu_model_debug\update_adc_data_wrapper.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
