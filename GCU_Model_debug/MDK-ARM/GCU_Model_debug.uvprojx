@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;      ../Drivers/STM32F7xx_HAL_Driver/Inc;      ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;      ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;      ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;       ../Drivers/STM32F7xx_HAL_Driver/Inc;       ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;       ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;       ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -550,6 +550,16 @@
               <FileType>1</FileType>
               <FilePath>..\Src\S-Function_Wrappers\readValueEEPROM_wrapper.c</FilePath>
             </File>
+            <File>
+              <FileName>CAN_Filter_Setup_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\CAN_Filter_Setup_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>CAN_Start_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\CAN_Start_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -579,6 +589,11 @@
               <FileName>adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/can.c</FilePath>
             </File>
             <File>
               <FileName>dma.c</FileName>
@@ -624,6 +639,11 @@
               <FileName>stm32f7xx_hal_adc_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_can.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_hal_cortex.c</FileName>

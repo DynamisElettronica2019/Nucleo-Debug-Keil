@@ -21,6 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "can.h"
 #include "dma.h"
 #include "gfxsimulator.h"
 #include "tim.h"
@@ -105,6 +106,7 @@ int main(void)
   MX_TIM4_Init();
   MX_GFXSIMULATOR_Init();
   MX_ADC1_Init();
+  MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
 	/*
 	HAL_TIM_Base_Start_IT(&htim2);
