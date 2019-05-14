@@ -3,7 +3,7 @@
 <title>Static Call Graph - [GCU_Model_debug\GCU_Model_debug.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image GCU_Model_debug\GCU_Model_debug.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue May 14 21:40:31 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue May 14 22:20:41 2019
 <BR><P>
 <H3>Maximum Stack Usage =        332 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -700,7 +700,8 @@ Global Symbols
 <P><STRONG><a name="[aa]"></a>GCU_Model_genCode_initialize</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, gcu_model_gencode.o(i.GCU_Model_genCode_initialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = GCU_Model_genCode_initialize &rArr; ClutchMotor_init_Outputs_wrapper &rArr; ClutchMotor_setupPWM_Outputs_wrapper &rArr; ClutchMotor_setPosition_Outputs_wrapper &rArr; HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC2_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GearMotor_init_Outputs_wrapper
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitADC_Outputs_wrapper
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GearMotor_init_Outputs_wrapper
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Efi_init_Outputs_wrapper
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClutchMotor_init_Outputs_wrapper
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start_Outputs_wrapper
@@ -708,7 +709,6 @@ Global Symbols
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;load_accParameters_Outputs_wrapper
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitUART_Outputs_wrapper
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitTimer_Outputs_wrapper
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitADC_Outputs_wrapper
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1038,8 +1038,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
 </UL>
 
 <P><STRONG><a name="[f3]"></a>HAL_Delay</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, stm32f7xx_hal.o(i.HAL_Delay))
