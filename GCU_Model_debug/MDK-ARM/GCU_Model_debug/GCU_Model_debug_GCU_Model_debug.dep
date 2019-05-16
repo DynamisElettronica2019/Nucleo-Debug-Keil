@@ -505,7 +505,7 @@ F (..\Src\S-Function_Wrappers\UnpackCanUART_wrapper.c)(0x5CC41E21)(--c99 -c --cp
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 F (..\Src\S-Function_Wrappers\UnpackUARTMsg_wrapper.c)(0x5CD1DF05)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\unpackuartmsg_wrapper.o --omf_browse gcu_model_debug\unpackuartmsg_wrapper.crf --depend gcu_model_debug\unpackuartmsg_wrapper.d)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
-F (..\Src\S-Function_Wrappers\update_ADC_data_wrapper.c)(0x5CDB1DC4)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\update_adc_data_wrapper.o --omf_browse gcu_model_debug\update_adc_data_wrapper.crf --depend gcu_model_debug\update_adc_data_wrapper.d)
+F (..\Src\S-Function_Wrappers\update_ADC_data_wrapper.c)(0x5CDD0EE7)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\update_adc_data_wrapper.o --omf_browse gcu_model_debug\update_adc_data_wrapper.crf --depend gcu_model_debug\update_adc_data_wrapper.d)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
 F (..\Src\S-Function_Wrappers\sendCAN_wrapper.c)(0x5CD3FAC0)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\sendcan_wrapper.o --omf_browse gcu_model_debug\sendcan_wrapper.crf --depend gcu_model_debug\sendcan_wrapper.d)
@@ -590,7 +590,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
 I (../Inc/timings.h)(0x5CC331B4)
@@ -804,15 +804,15 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
-F (..\Src\GCU_Model_genCode.c)(0x5CDB1910)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\gcu_model_gencode.o --omf_browse gcu_model_debug\gcu_model_gencode.crf --depend gcu_model_debug\gcu_model_gencode.d)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+F (..\Src\GCU_Model_genCode.c)(0x5CDD1170)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\gcu_model_gencode.o --omf_browse gcu_model_debug\gcu_model_gencode.crf --depend gcu_model_debug\gcu_model_gencode.d)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
 I (../Inc/timings.h)(0x5CC331B4)
 I (../Inc/solver_zc.h)(0x5A793FCF)
-F (..\Src\GCU_Model_genCode_data.c)(0x5CDB1910)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\gcu_model_gencode_data.o --omf_browse gcu_model_debug\gcu_model_gencode_data.crf --depend gcu_model_debug\gcu_model_gencode_data.d)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+F (..\Src\GCU_Model_genCode_data.c)(0x5CDD1170)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GCU_Model_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o gcu_model_debug\gcu_model_gencode_data.o --omf_browse gcu_model_debug\gcu_model_gencode_data.crf --depend gcu_model_debug\gcu_model_gencode_data.d)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
@@ -856,7 +856,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
 I (../Inc/adc.h)(0x5CD49447)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
@@ -946,7 +946,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
@@ -991,7 +991,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
@@ -1113,7 +1113,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
@@ -1158,7 +1158,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x5CA266A2)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x5CA266A2)
 I (../Inc/constant_defines.h)(0x5CD5ABD0)
-I (../Inc/GCU_Model_genCode.h)(0x5CDB1910)
+I (../Inc/GCU_Model_genCode.h)(0x5CDD1170)
 I (../Inc/rtwtypes.h)(0x5CC1CB65)
 I (../Inc/zero_crossing_types.h)(0x5CC1CB65)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BD7A4)
