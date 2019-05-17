@@ -565,6 +565,16 @@
               <FileType>1</FileType>
               <FilePath>..\Src\S-Function_Wrappers\Read_oil_sensor_wrapper.c</FilePath>
             </File>
+            <File>
+              <FileName>CAN_Load_id_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\CAN_Load_id_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>ScanADC_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\S-Function_Wrappers\ScanADC_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

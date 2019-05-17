@@ -43,3 +43,4 @@ gcu_model_debug\can.o: ../Inc/rtwtypes.h
 gcu_model_debug\can.o: ../Inc/zero_crossing_types.h
 gcu_model_debug\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 gcu_model_debug\can.o: ../Inc/timings.h
+gcu_model_debug\can.o: ../Inc/id_can.h

@@ -13,9 +13,7 @@
 
 
 /* %%%-SFUNWIZ_wrapper_includes_Changes_BEGIN --- EDIT HERE TO _END */
-#if !defined(MATLAB_MEX_FILE)
-#include "pin_defines.h"
-#endif
+#include "constant_defines.h"
 /* %%%-SFUNWIZ_wrapper_includes_Changes_END --- EDIT HERE TO _BEGIN */
 #define y_width 1
 
@@ -31,12 +29,10 @@
  * Output function
  *
  */
-void Read_oil_sensor_Outputs_wrapper(uint16_T *l_oil)
+void CAN_Load_id_Outputs_wrapper(uint16_T *id_can_array)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
-#if !defined(MATLAB_MEX_FILE)
-  *l_oil = (uint16_T) HAL_GPIO_ReadPin(L_OIL_GPIO_Port, L_OIL_Pin);
-  #endif
+ 
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
 

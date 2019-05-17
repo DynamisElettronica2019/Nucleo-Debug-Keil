@@ -15,28 +15,32 @@
 /* %%%-SFUNWIZ_wrapper_includes_Changes_BEGIN --- EDIT HERE TO _END */
 #if !defined(MATLAB_MEX_FILE)
 #include "pin_defines.h"
+#include "constant_defines.h"
+#include "GCU_Model_genCode.h"
 #endif
 /* %%%-SFUNWIZ_wrapper_includes_Changes_END --- EDIT HERE TO _BEGIN */
-#define y_width 1
 
 /*
  * Create external references here.  
  *
  */
 /* %%%-SFUNWIZ_wrapper_externs_Changes_BEGIN --- EDIT HERE TO _END */
- 
+#if !defined(MATLAB_MEX_FILE)
+extern ADC_HandleTypeDef hadc_sensors;
+extern ExtU rtU;
+#endif
 /* %%%-SFUNWIZ_wrapper_externs_Changes_END --- EDIT HERE TO _BEGIN */
 
 /*
  * Output function
  *
  */
-void Read_oil_sensor_Outputs_wrapper(uint16_T *l_oil)
+void ScanADC_Outputs_wrapper(void)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
 #if !defined(MATLAB_MEX_FILE)
-  *l_oil = (uint16_T) HAL_GPIO_ReadPin(L_OIL_GPIO_Port, L_OIL_Pin);
-  #endif
+HAL_ADC_Start_DMA(&hadc_sensors, rtU.adc_buffer, ADC_DATA_SIZE);
+#endif
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
 

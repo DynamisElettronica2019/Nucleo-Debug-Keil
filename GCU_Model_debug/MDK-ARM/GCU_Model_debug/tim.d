@@ -43,4 +43,5 @@ gcu_model_debug\tim.o: ../Inc/rtwtypes.h
 gcu_model_debug\tim.o: ../Inc/zero_crossing_types.h
 gcu_model_debug\tim.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 gcu_model_debug\tim.o: ../Inc/timings.h
+gcu_model_debug\tim.o: ../Inc/id_can.h
 gcu_model_debug\tim.o: ../Inc/pin_defines.h

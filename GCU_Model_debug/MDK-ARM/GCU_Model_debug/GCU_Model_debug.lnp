@@ -35,6 +35,8 @@
 "gcu_model_debug\can_filter_setup_wrapper.o"
 "gcu_model_debug\can_start_wrapper.o"
 "gcu_model_debug\read_oil_sensor_wrapper.o"
+"gcu_model_debug\can_load_id_wrapper.o"
+"gcu_model_debug\scanadc_wrapper.o"
 "gcu_model_debug\gcu_model_gencode.o"
 "gcu_model_debug\gcu_model_gencode_data.o"
 "gcu_model_debug\main.o"
