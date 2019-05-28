@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'GCU_Model_genCode'.
  *
- * Model version                  : 1.140
+ * Model version                  : 1.226
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Thu May 16 17:12:06 2019
+ * C/C++ source code generated on : Tue May 28 23:41:46 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -44,19 +44,15 @@ const ConstP rtConstP = {
    *   '<Root>/Rate Transition1'
    *   '<Root>/Rate Transition2'
    *   '<Root>/Rate Transition27'
+   *   '<Root>/Rate Transition29'
    *   '<Root>/Rate Transition4'
    *   '<Root>/Rate Transition8'
    *   '<S1>/Constant'
-   *   '<S8>/debugValues'
-   *   '<S10>/oil_sensor'
-   *   '<S23>/Values'
+   *   '<S9>/debugValues'
+   *   '<S11>/oil_sensor'
+   *   '<S32>/Values'
    */
-  0U,
-
-  /* Computed Parameter: GCU_FEEDBACK_ID_Value
-   * Referenced by: '<S43>/GCU_FEEDBACK_ID'
-   */
-  793U
+  0U
 };
 
 /*

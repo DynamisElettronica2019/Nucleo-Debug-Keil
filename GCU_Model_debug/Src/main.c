@@ -24,6 +24,7 @@
 #include "can.h"
 #include "dma.h"
 #include "gfxsimulator.h"
+#include "i2c.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -68,10 +69,10 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 extern uint8_t rxData[];
 uint8_t tempMsg[UART_SENT_DATA_WIDTH+4];
-
+uint8_t tempEepromUartMsg[UART_SENT_EEPROM_DATA_WIDTH+3];
+uint8_t tempEepromMsg[I2C_SENT_EEPROM_DATA_WIDTH];
 extern uint32_t adc_buffer[];
 /* USER CODE END 0 */
-
 /**
   * @brief  The application entry point.
   * @retval int
@@ -107,6 +108,7 @@ int main(void)
   MX_GFXSIMULATOR_Init();
   MX_ADC1_Init();
   MX_CAN1_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 	/*
 	HAL_TIM_Base_Start_IT(&htim2);
@@ -126,6 +128,7 @@ int main(void)
 	GCU_Model_genCode_initialize();	
 	rtU.SelectMode = UART_READ_MODE;
 	GCU_Model_genCode_step2();
+	GCU_Model_genCode_step6();
 	
 	//CAN1_Start();
   /* USER CODE END 2 */
@@ -197,8 +200,9 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART3;
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART3|RCC_PERIPHCLK_I2C1;
   PeriphClkInitStruct.Usart3ClockSelection = RCC_USART3CLKSOURCE_PCLK1;
+  PeriphClkInitStruct.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();

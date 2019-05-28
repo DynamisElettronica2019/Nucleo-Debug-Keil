@@ -22,7 +22,11 @@
 
 /* USER CODE BEGIN 0 */
 uint8_t rxData[UART_READ_DATA_WIDTH], readData = 0;
+uint8_t rxDataEeprom[UART_READ_EEPROM_DATA_WIDTH];
 char header[] = "hdr", temp[] = {0,0,0};
+char headerEeprom[] = "epr";
+char headerModEeprom[] = "mod";
+extern uint8_t sendUartFlag;
 int flag = 0;
 /* USER CODE END 0 */
 
@@ -142,7 +146,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		temp[1] = temp[2];
 		temp[2] = rxData[0];
 	}
-	else
+	else if(readData == 1)
 	{
 		readData = 0;
 		
@@ -158,6 +162,18 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			GCU_Model_genCode_step2();
 		}	
 	}
+	else if(readData == 2)
+	{
+		for(int i=0; i<UART_READ_EEPROM_DATA_WIDTH;i++)
+		//aggiornare inport con il nome giusto
+			rtU.inputRequest[i] = rxDataEeprom[i];
+		
+			HAL_GPIO_TogglePin(RedLed_GPIO_Port, RedLed_Pin);
+			flag = 1;
+
+		//aggiungere step da chiamare per eseguire il subsystem
+			GCU_Model_genCode_step6();		
+	}
 	
 	if(!strncmp(header, temp, 3))
 	{
@@ -167,6 +183,24 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		for(int i = 0; i<3; i++)
 			temp[i] = 0;
 	}
+	else if(!strncmp(headerEeprom, temp, 3))
+	{
+		readData = 2;
+		//da aggiornare  con la lunghezza giusta
+		HAL_UART_Receive_IT(&huartDebug, rxDataEeprom, UART_READ_EEPROM_DATA_WIDTH);
+		//svuoto header (giusto così)
+		for(int i = 0; i<3; i++)
+			temp[i] = 0;		
+	}	
+	else if(!strncmp(headerModEeprom, temp, 3))
+	{
+		readData = 0;		
+		sendUartFlag = !sendUartFlag;
+		HAL_UART_Receive_IT(&huartDebug, rxData, 1);
+		//svuoto temp
+		for(int i = 0; i<3; i++)
+			temp[i] = 0;
+	}	
 	else HAL_UART_Receive_IT(&huartDebug, rxData, 1);
 	
 		 __enable_irq();

@@ -22,6 +22,13 @@
 #define L_OIL_GPIO_Port UserButton_GPIO_Port
 #define L_OIL_Pin       UserButton_Pin
 
+//Definizione pin per EEPROM
+#define hi2cEeprom hi2c1
+#define EEPROM_WP_GPIO_Port     GreenLed_GPIO_Port
+#define EEPROM_WP_Pin           GreenLed_Pin
+
+
+
 //Definizione pwm per clutch
 #define TIM_CLUTCH_CHANNEL TIM_CHANNEL_4
 #define hClutchTim htim4

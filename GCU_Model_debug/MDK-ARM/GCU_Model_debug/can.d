@@ -40,7 +40,6 @@ gcu_model_debug\can.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex
 gcu_model_debug\can.o: ../Inc/constant_defines.h
 gcu_model_debug\can.o: ../Inc/GCU_Model_genCode.h
 gcu_model_debug\can.o: ../Inc/rtwtypes.h
-gcu_model_debug\can.o: ../Inc/zero_crossing_types.h
 gcu_model_debug\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 gcu_model_debug\can.o: ../Inc/timings.h
 gcu_model_debug\can.o: ../Inc/id_can.h
