@@ -138,7 +138,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		//HAL_GPIO_TogglePin(EFI_MAP_GPIO_Port,EFI_MAP_Pin);
+		//HAL_GPIO_TogglePin(EFI_RPM_LIMITER_GPIO_PORT,EFI_RPM_LIMITER_Pin);
+		HAL_Delay(500);
     /* USER CODE BEGIN 3 */
 		//CAN1_Send_Nucleo_F7_Packet();
 		//HAL_Delay(500);

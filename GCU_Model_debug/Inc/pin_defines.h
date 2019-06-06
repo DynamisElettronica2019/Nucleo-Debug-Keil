@@ -17,6 +17,8 @@
 #define EFI_RPM_LIMITER_GPIO_PORT LED_5_ROSSO_GPIO_Port
 #define EFI_UPCUT_Pin   LED_1_GIALLO_Pin
 #define EFI_RPM_LIMITER_Pin LED_5_ROSSO_Pin
+#define EFI_MAP_GPIO_Port LED_2_GIALLO_GPIO_Port
+#define EFI_MAP_Pin LED_2_GIALLO_Pin
 
 //Definizione pin per livello olio
 #define L_OIL_GPIO_Port UserButton_GPIO_Port
@@ -34,6 +36,21 @@
 #define hClutchTim htim4
 #define CCR_CLUTCH CCR4
 
+//Definizione pwm per buzzer
+#define TIM_BUZZER_CHANNEL TIM_CHANNEL_4
+#define hBuzzerTim htim4
+#define CCR_BUZZER CCR4
+
+//Definizione pwm per pompa benzina
+#define TIM_PUMP_CHANNEL  TIM_CHANNEL_4
+#define hPumpTim htim4
+#define CCR_PUMP CCR4
+
+//Definizione pwm per stop light
+#define TIM_STOP_CTRL_CHANNEL	TIM_CHANNEL_4
+#define hStopTim htim4
+#define CCR_STOP_CTRL	CCR4
+
 //Definizione uart utilizzata per debug
 #define huartDebug huart3
 
@@ -47,6 +64,12 @@
 //Definizione ADC per sensori
 #define hadc_sensors hadc1
 #define ADC_SENSORS ADC1
+
+//Definizione pin per KEYON
+#define KEY_ON_GPIO_Port	LED_3_GIALLO_GPIO_Port
+#define KEY_ON_Pin			LED_3_GIALLO_Pin
+#define KEY_START_GPIO_Port LED_3_GIALLO_GPIO_Port
+#define KEY_START_Pin       LED_3_GIALLO_Pin
 
 //Definizione led ausiliari su scheda
 //#define RedLed_GPIO_Port RedLed_GPIO_Port 

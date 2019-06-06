@@ -13,7 +13,7 @@
 
 //Periodi 
 #define SEND_SERIAL_DATA_PERIOD 50     //periodo di invio dei dati su seriale 
-#define SEND_CAN_DATA_PERIOD    50
+#define SEND_CAN_DATA_PERIOD    10
 #define TOGGLE_LED_PERIOD       500   //periodo di accensione del led
 #define ADC_PERIOD              10           //periodo di campionamento dei sensori
 
@@ -25,14 +25,22 @@
 //Filtri impostati per il CAN
 #define CAN_FILTER_NUMBER   14
 
+//Set e Reset del comando KeyOn, upCut e rpmLimiter
+#define KEY_ON_SET   1
+#define KEY_ON_RESET 0
+#define UPCUT_SET 	 0
+#define UPCUT_RESET  1
+#define RPM_SET      0
+#define RPM_RESET    1
+
 //Define delle modalità di guida
 //#define BOARD_DEBUG_MODE   0
 //#define DEBUG_MODE		   1
 //#define SETTINGS_MODE	   2
-#define SKIDPAD_MODE		   3
-#define AUTOX_MODE			   4
-#define ACCELERATION_MODE  5
-#define ENDURANCE_MODE	   6
+#define SKIDPAD_MODE	   3
+#define AUTOX_MODE         2
+#define ACCELERATION_MODE  1
+#define ENDURANCE_MODE	   0
 
 //Define di accelerationFB
 #define ACC_OFF 				0
